@@ -53,16 +53,13 @@ namespace on_off_proj
                 }
 
                 //비밀번호 암호화
-                AES aes = new AES();
-                string pw = aes.Encryption(textBox_sign_up_PW.Text, count.ToString());
+                string pw = AES.Encryption(textBox_sign_up_PW.Text, count.ToString());
 
                 //이미지파일 바이트단위저장
-                byte[] imageBt = null;
+                byte[] IMG = null;
                 if (textBox_sign_up_image_path.Text != "")
                 {
-                    FileStream fstream = new FileStream(this.textBox_sign_up_image_path.Text, FileMode.Open, FileAccess.Read);
-                    BinaryReader br = new BinaryReader(fstream);
-                    imageBt = br.ReadBytes((int)fstream.Length);
+                    IMG = imageBt.insert_imagebyte(this.textBox_sign_up_image_path.Text);
                 }
 
 
@@ -75,7 +72,7 @@ namespace on_off_proj
                 {
                     MySqlCommand mySqlInsertCommand = new MySqlCommand(insertQuery, connection);
                     
-                    mySqlInsertCommand.Parameters.Add(new MySqlParameter("@IMG", imageBt));
+                    mySqlInsertCommand.Parameters.Add(new MySqlParameter("@IMG", IMG));
                     
 
                     if(ID_check == true)
@@ -93,6 +90,7 @@ namespace on_off_proj
 
         }
 
+        
         private void sign_up_pictureBox_Click(object sender, EventArgs e)
         {
             OpenFileDialog dig = new OpenFileDialog();

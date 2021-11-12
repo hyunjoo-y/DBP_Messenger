@@ -5,10 +5,10 @@ using System.Text;
 
 namespace on_off_proj
 {
-    class AES
+    static class AES
     {
         /// <returns>암호화 된 데이터</returns>
-        private string EncryptString(string plainText, string cipherKey)
+        private static string EncryptString(string plainText, string cipherKey)
         {
             // class 선언, 초기화
             RijndaelManaged RijndaelCipher = new RijndaelManaged();
@@ -51,7 +51,7 @@ namespace on_off_proj
         }
 
         /// 복호화
-        private string DecryptString(string encryptData, string cipherKey)
+        private static string DecryptString(string encryptData, string cipherKey)
         {
             RijndaelManaged RijndaelCipher = new RijndaelManaged();
 
@@ -87,7 +87,7 @@ namespace on_off_proj
         }
 
 
-        public string Encryption(string Encryption_sentence, string db_encryption_key)
+        public static string Encryption(string Encryption_sentence, string db_encryption_key)
         {
             // 암호화
             string encryptKey = Encryption_sentence;  // 암호화 할 평문
@@ -96,7 +96,7 @@ namespace on_off_proj
             return enc;
 
         }
-        public string Decryption(string enc, string password)
+        public static string Decryption(string enc, string password)
         {
             //복호화
             string decryptKey = enc;   // 복호화 할 암호화 키
