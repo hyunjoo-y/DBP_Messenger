@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AES.cs" />
+    <Compile Include="imageBt.cs" />
     <Compile Include="sign_up.cs">
       <SubType>Form</SubType>
     </Compile>
