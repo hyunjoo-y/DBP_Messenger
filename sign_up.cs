@@ -2,8 +2,6 @@
 using System;
 using System.Windows.Forms;
 using System.IO;
-using System.Drawing;
-using System.Drawing.Drawing2D;
 
 namespace on_off_proj
 {
@@ -14,9 +12,9 @@ namespace on_off_proj
             InitializeComponent();
         }
 
-
-        private void button_sing_up_save_Click(object sender, EventArgs e)
+        private void sing_up_save_button_Click(object sender, EventArgs e)
         {
+
             string myConnection = "Server=27.96.130.41;Port=3306;Database=s5671252;Uid=s5671252;Pwd=s5671252";
             using (MySqlConnection connection = new MySqlConnection(myConnection))
             {
@@ -33,7 +31,7 @@ namespace on_off_proj
                     MySqlCommand mySqlCommand = new MySqlCommand(Query, connection);
                     MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
 
-                    if (mySqlDataReader.HasRows == true) //db에 1개 이상의 값이 있다면 실행
+                    if(mySqlDataReader.HasRows == true) //db에 1개 이상의 값이 있다면 실행
                     {
                         while (mySqlDataReader.Read())
                         {
@@ -73,11 +71,11 @@ namespace on_off_proj
                 try
                 {
                     MySqlCommand mySqlInsertCommand = new MySqlCommand(insertQuery, connection);
-
+                    
                     mySqlInsertCommand.Parameters.Add(new MySqlParameter("@IMG", IMG));
+                    
 
-
-                    if (ID_check == true)
+                    if(ID_check == true)
                     {
                         mySqlInsertCommand.ExecuteNonQuery();
                     }
@@ -89,63 +87,23 @@ namespace on_off_proj
                 }
 
             }
+
         }
 
-            private void pictureBox_sign_up_Click(object sender, EventArgs e)
+        
+        private void sign_up_pictureBox_Click(object sender, EventArgs e)
         {
             OpenFileDialog dig = new OpenFileDialog();
             dig.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|All Files(*.*)|*.*";
 
-
-
-            if (dig.ShowDialog() == DialogResult.OK)
+            if(dig.ShowDialog() == DialogResult.OK)
             {
                 string picLoc = dig.FileName.ToString();
                 textBox_sign_up_image_path.Text = picLoc;
                 pictureBox_sign_up.ImageLocation = picLoc;
 
 
-
             }
-
         }
-
-        private void textBox_sign_up_ID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_sign_up_PW_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_sign_up_Name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sign_up_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        
     }
 }

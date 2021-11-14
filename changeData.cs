@@ -47,10 +47,7 @@ namespace DB_SNS
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())
                     {
-                        textBox_cgpassword.Text = login_pw;
-                        textBox_cgname.Text = (string)rdr["NAME"];
                         textBox_cgnickname.Text = (string)rdr["NICKNAME"];
-                        textBox_cgaddress.Text = (string)rdr["ADDRESS"];
 
                         try
                         {
@@ -60,7 +57,7 @@ namespace DB_SNS
                             rdr.GetBytes(rdr.GetOrdinal("file"), 0, imgData, 0, (int)FileSize);
                             FileName = @System.IO.Directory.GetCurrentDirectory() + "\\newfile.jpeg";
 
-                            ProfilePicture.Image = imageBt.read_imagebyte(imgData);
+                            ProfilePicture.Image = on_off_proj.imageBt.read_imagebyte(imgData);
                             
 
 
@@ -87,25 +84,7 @@ namespace DB_SNS
             }
         }
 
-        //패스워드,이름,주소,별명을 저장하는 버튼 이벤트
-        private void button_cgsave_Click(object sender, EventArgs e)
-        {
-            string password = textBox_cgpassword.Text;
-            string name = textBox_cgname.Text;
-            string address = textBox_cgaddress.Text;
-            string nickname = textBox_cgnickname.Text;
-
-            using (MySqlConnection conn = new MySqlConnection(strconn))
-            {
-                conn.Open();
-                string query = query = "UPDATE SNS SET USERPW='" + password + "',NAME='" + name + "',ADDRESS='" +
-                        address + "',NICKNAME='" + nickname + "' WHERE USERID ='" + login_id + "'";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("SAVED");
-
-            }
-        }
+        
 
         //버튼 클릭시 이미지 표시, DB 저장
         String imgPath = "";
@@ -131,7 +110,7 @@ namespace DB_SNS
                         conn.Open();
                         fs = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
                         FileSize = (UInt32)fs.Length;
-                        imgData = imageBt.insert_imagebyte(imgPath);
+                        imgData = on_off_proj.imageBt.insert_imagebyte(imgPath);
 
                         string query = "UPDATE SNS SET IMGNAME = '" + imgPath + "'FILESIZE ='" + FileSize + "', IMG = '" +
                         imgData + "' WHERE USERID ='" + login_id + "'";
@@ -151,6 +130,27 @@ namespace DB_SNS
                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     } // end of try to catch finally
                 }
+            }
+        }
+
+        private void changeData_Load(object sender, EventArgs e)
+        {
+            BackColor = Color.White;
+        }
+
+  
+        private void button_cgsave_Click(object sender, EventArgs e)
+        {
+            string nickname = textBox_cgnickname.Text;
+
+            using (MySqlConnection conn = new MySqlConnection(strconn))
+            {
+                conn.Open();
+                string query = query = "UPDATE SNS SET NICKNAME='" + nickname + "' WHERE USERID ='" + login_id + "'";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("SAVED");
+
             }
         }
     }
