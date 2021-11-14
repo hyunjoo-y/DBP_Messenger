@@ -91,6 +91,9 @@
   <ItemGroup>
     <Compile Include="AES.cs" />
     <Compile Include="imageBt.cs" />
+    <Compile Include="RoundPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="sign_up.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\유튜브_기본프로필_하늘색.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\profile.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
