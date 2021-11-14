@@ -112,5 +112,10 @@ namespace DB_SNS
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
