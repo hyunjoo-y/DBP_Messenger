@@ -16,7 +16,8 @@ namespace on_off_proj
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new changeMemInfo("to123we", "1234"));
+  
+            Application.Run(new SignIn());
         }
     }
 }

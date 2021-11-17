@@ -89,6 +89,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="address.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="address.Designer.cs">
+      <DependentUpon>address.cs</DependentUpon>
+    </Compile>
     <Compile Include="AES.cs" />
     <Compile Include="changeData.cs">
       <SubType>Form</SubType>
@@ -103,6 +109,12 @@
       <DependentUpon>changeMemInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Encrypt.cs" />
+    <Compile Include="MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="imageBt.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="RoundPictureBox.cs">
@@ -122,11 +134,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="address.resx">
+      <DependentUpon>address.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="changeData.resx">
       <DependentUpon>changeData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="changeMemInfo.resx">
       <DependentUpon>changeMemInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -31,7 +31,7 @@ namespace on_off_proj
                     MySqlCommand mySqlCommand = new MySqlCommand(Query, connection);
                     MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
 
-                    if(mySqlDataReader.HasRows == true) //db에 1개 이상의 값이 있다면 실행
+                    if (mySqlDataReader.HasRows == true) //db에 1개 이상의 값이 있다면 실행
                     {
                         while (mySqlDataReader.Read())
                         {
@@ -55,6 +55,7 @@ namespace on_off_proj
                 //비밀번호 암호화
                 string pw = AES.Encryption(textBox_sign_up_PW.Text, count.ToString());
 
+                Console.WriteLine(count);
                 //이미지파일 바이트단위저장
                 byte[] IMG = null;
                 if (textBox_sign_up_image_path.Text != "")
@@ -65,17 +66,18 @@ namespace on_off_proj
 
 
                 //회원가입
-                string insertQuery = "INSERT INTO on_off(ID, PW, 이름, 주소, 별명, 프로필사진)" +
+                string insertQuery = "INSERT INTO on_off(ID, PW, 이름, 우편번호, 주소, 상세주소, 별명, 프로필사진)" +
                    "VALUES('" + this.textBox_sign_up_ID.Text + "','" + pw + "','" + this.textBox_sign_up_Name.Text + "','"
-                   + this.textBox_sign_up_Address.Text + "','" + this.textBox_sign_up_Nickname.Text + "',@IMG)";
+                   + this.textBox_sign_up_Address_1.Text + "','" + this.textBox_sign_up_Address_2.Text + "','" + this.textBox_sign_up_Address_3.Text + "','"
+                   + this.textBox_sign_up_Nickname.Text + "',@IMG)";
                 try
                 {
                     MySqlCommand mySqlInsertCommand = new MySqlCommand(insertQuery, connection);
-                    
-                    mySqlInsertCommand.Parameters.Add(new MySqlParameter("@IMG", IMG));
-                    
 
-                    if(ID_check == true)
+                    mySqlInsertCommand.Parameters.Add(new MySqlParameter("@IMG", IMG));
+
+
+                    if (ID_check == true)
                     {
                         mySqlInsertCommand.ExecuteNonQuery();
                     }
@@ -90,13 +92,13 @@ namespace on_off_proj
 
         }
 
-        
+
         private void sign_up_pictureBox_Click(object sender, EventArgs e)
         {
             OpenFileDialog dig = new OpenFileDialog();
             dig.Filter = "JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png|All Files(*.*)|*.*";
 
-            if(dig.ShowDialog() == DialogResult.OK)
+            if (dig.ShowDialog() == DialogResult.OK)
             {
                 string picLoc = dig.FileName.ToString();
                 textBox_sign_up_image_path.Text = picLoc;
@@ -104,6 +106,21 @@ namespace on_off_proj
 
 
             }
+        }
+
+        private void button_Address_Click(object sender, EventArgs e)
+        {
+            address frm = new address();
+            frm.ShowDialog();
+
+            // 창이 닫히면 반환값을 반환한다.
+            if (frm.gstrZipCode != "")
+            {
+                textBox_sign_up_Address_1.Text = frm.gstrZipCode;
+                textBox_sign_up_Address_2.Text = frm.gstrAddress1;
+            }
+
+            frm = null;
         }
     }
 }

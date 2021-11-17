@@ -1,7 +1,7 @@
 ﻿
-namespace DB_SNS
+namespace on_off_proj
 {
-    partial class signIn
+    partial class SignIn
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -35,6 +35,7 @@ namespace DB_SNS
             this.checkBox_Remember = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button_legister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox_id
@@ -53,7 +54,7 @@ namespace DB_SNS
             // 
             // button_login
             // 
-            this.button_login.Location = new System.Drawing.Point(40, 281);
+            this.button_login.Location = new System.Drawing.Point(129, 285);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(75, 23);
             this.button_login.TabIndex = 2;
@@ -64,7 +65,7 @@ namespace DB_SNS
             // checkBox_Remember
             // 
             this.checkBox_Remember.AutoSize = true;
-            this.checkBox_Remember.Location = new System.Drawing.Point(129, 285);
+            this.checkBox_Remember.Location = new System.Drawing.Point(103, 341);
             this.checkBox_Remember.Name = "checkBox_Remember";
             this.checkBox_Remember.Size = new System.Drawing.Size(156, 19);
             this.checkBox_Remember.TabIndex = 3;
@@ -89,18 +90,29 @@ namespace DB_SNS
             this.label2.TabIndex = 5;
             this.label2.Text = "PASSWORD";
             // 
-            // Form1
+            // button_legister
+            // 
+            this.button_legister.Location = new System.Drawing.Point(129, 247);
+            this.button_legister.Name = "button_legister";
+            this.button_legister.Size = new System.Drawing.Size(75, 23);
+            this.button_legister.TabIndex = 6;
+            this.button_legister.Text = "button";
+            this.button_legister.UseVisualStyleBackColor = true;
+            this.button_legister.Click += new System.EventHandler(this.button_legister_Click);
+            // 
+            // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 653);
+            this.Controls.Add(this.button_legister);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkBox_Remember);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.textBox_pw);
             this.Controls.Add(this.textBox_id);
-            this.Name = "Form1";
+            this.Name = "SignIn";
             this.Text = "SNS";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -116,6 +128,7 @@ namespace DB_SNS
         private System.Windows.Forms.CheckBox checkBox_Remember;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button_legister;
     }
 }
 

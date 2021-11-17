@@ -1,61 +1,66 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Security.Cryptography;
+using MySql.Data.MySqlClient;
 
-namespace DB_SNS
+namespace on_off_proj
 {
-    public partial class signIn : Form
+    public partial class SignIn : Form
     {
-        public signIn()
+        public SignIn()
         {
             InitializeComponent();
-            
+
             setUp();
         }
-        string strconn = "Server=27.96.130.41;Database=s5727722;Uid=s5727722;Pwd=s5727722";
+        string strconn = "Server=27.96.130.41;Port=3306;Database=s5671252;Uid=s5671252;Pwd=s5671252";
 
+        //로그인 버튼 클릭했을 때
         private void button_login_Click(object sender, EventArgs e)
         {
             BinaryWriter brChecked = new BinaryWriter(new FileStream("setting.stu", FileMode.OpenOrCreate));
+            bool login = false;
+
+            int count = 1;
 
             using (MySqlConnection conn = new MySqlConnection(strconn))
             {
                 conn.Open();
-                
+
                 string login_id = textBox_id.Text;
                 string login_pw = textBox_pw.Text;
 
-                string query = "SELECT * FROM SNS WHERE USERID = '"+login_id+"'";
+                string query = "SELECT * FROM on_off WHERE ID = '" + login_id + "'";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-                bool login = false;
                 while (rdr.Read())
                 {
-                    if(login_id == (string)rdr["USERID"] && login_pw == (string)rdr["USERPW"])
+                    count = Convert.ToInt32(rdr["count"].ToString());
+                    Console.WriteLine(count);
+                    string pw = AES.Decryption(rdr["PW"].ToString(), count.ToString());
+
+                    if (login_id == (string)rdr["ID"] && login_pw == pw)
                     {
                         login = true;
                     }
                 }
                 rdr.Close();
-
+                
                 if (login)
                 {
                     if (checkBox_Remember.Checked)
                     {
                         brChecked.Write("Remember_Account=true");
-                        brChecked.Write("ID="+textBox_id.Text);
-                        brChecked.Write("PW="+Encrypt.encryptAES128(textBox_pw.Text));
+                        brChecked.Write("ID=" + textBox_id.Text);
+                        brChecked.Write("PW=" + DB_SNS.Encrypt.encryptAES128(textBox_pw.Text));
                     }
                     else
                     {
@@ -63,18 +68,20 @@ namespace DB_SNS
                     }
                     MessageBox.Show("LOGIN SUCCESS");
                     this.Visible = false;
-                    changeData change = new changeData(login_id, login_pw);
+                    MainScreen change = new MainScreen(login_id, login_pw);
                     change.ShowDialog();
-                    
+                    brChecked.Close();
+
                 }
                 else
                 {
                     MessageBox.Show("LOGIN FAILED");
                 }
+
                 brChecked.Close();
             }
         }
-        
+
         public void setUp()
         {
             BinaryReader brChecked = new BinaryReader(new FileStream("setting.stu", FileMode.OpenOrCreate));
@@ -93,24 +100,33 @@ namespace DB_SNS
 
                     checkBox_Remember.Checked = true;
                     textBox_id.Text = id.Substring(3);
-                    textBox_pw.Text = Encrypt.decryptAES128(pw.Substring(3));
+                    textBox_pw.Text = DB_SNS.Encrypt.decryptAES128(pw.Substring(3));
                 }
             }
             catch (EndOfStreamException)
             {
+                Console.WriteLine("Error");
                 return;
             }
             finally
             {
                 brChecked.Close();
             }
-           
-            
+
+
         }
+
+        private void button_legister_Click(object sender, EventArgs e)
+        {
+            sign_up signup = new sign_up();
+            signup.ShowDialog();
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 }

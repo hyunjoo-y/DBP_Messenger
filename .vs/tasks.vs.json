@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-address",
+      "appliesTo": "address.cs",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-sign_up",
+      "appliesTo": "sign_up.cs",
+      "type": "launch"
+    }
+  ]
+}

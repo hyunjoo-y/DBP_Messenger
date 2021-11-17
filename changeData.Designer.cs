@@ -193,7 +193,6 @@ namespace DB_SNS
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "changeData";
             this.Text = "ON-OFF";
-            this.Load += new System.EventHandler(this.changeData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
