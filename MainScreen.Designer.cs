@@ -31,6 +31,8 @@ namespace on_off_proj
         {
             this.button_private = new System.Windows.Forms.Button();
             this.button_profile = new System.Windows.Forms.Button();
+            this.textBox_searchId = new System.Windows.Forms.TextBox();
+            this.button_addfriend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_private
@@ -53,16 +55,36 @@ namespace on_off_proj
             this.button_profile.UseVisualStyleBackColor = true;
             this.button_profile.Click += new System.EventHandler(this.button_profile_Click);
             // 
+            // textBox_searchId
+            // 
+            this.textBox_searchId.Location = new System.Drawing.Point(126, 169);
+            this.textBox_searchId.Name = "textBox_searchId";
+            this.textBox_searchId.Size = new System.Drawing.Size(100, 25);
+            this.textBox_searchId.TabIndex = 2;
+            // 
+            // button_addfriend
+            // 
+            this.button_addfriend.Location = new System.Drawing.Point(256, 170);
+            this.button_addfriend.Name = "button_addfriend";
+            this.button_addfriend.Size = new System.Drawing.Size(114, 23);
+            this.button_addfriend.TabIndex = 3;
+            this.button_addfriend.Text = "add Friend";
+            this.button_addfriend.UseVisualStyleBackColor = true;
+            this.button_addfriend.Click += new System.EventHandler(this.button_addfriend_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 653);
+            this.Controls.Add(this.button_addfriend);
+            this.Controls.Add(this.textBox_searchId);
             this.Controls.Add(this.button_profile);
             this.Controls.Add(this.button_private);
             this.Name = "MainScreen";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -70,5 +92,7 @@ namespace on_off_proj
 
         private System.Windows.Forms.Button button_private;
         private System.Windows.Forms.Button button_profile;
+        private System.Windows.Forms.TextBox textBox_searchId;
+        private System.Windows.Forms.Button button_addfriend;
     }
 }

@@ -108,6 +108,7 @@
     <Compile Include="changeMemInfo.Designer.cs">
       <DependentUpon>changeMemInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Config.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="MainScreen.cs">
       <SubType>Form</SubType>

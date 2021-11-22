@@ -80,7 +80,16 @@ namespace on_off_proj
                     if (ID_check == true)
                     {
                         mySqlInsertCommand.ExecuteNonQuery();
+
+                        string createQuery = "CREATE TABLE Friend" + textBox_sign_up_ID.Text + 
+                                        "(id Integer unsigned NOT NULL AUTO_INCREMENT, " +
+                                        "FID VARCHAR(45) NOT NULL, " +
+                                        "PRIMARY KEY (id))";
+
+                        MySqlCommand mySqlFriendCommand = new MySqlCommand(createQuery, connection);
+                        mySqlFriendCommand.ExecuteNonQuery();
                     }
+                    else return;
 
                 }
                 catch (Exception ex)
