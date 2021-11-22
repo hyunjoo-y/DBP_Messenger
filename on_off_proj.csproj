@@ -95,6 +95,7 @@
     <Compile Include="address.Designer.cs">
       <DependentUpon>address.cs</DependentUpon>
     </Compile>
+    <Compile Include="add_friend.cs" />
     <Compile Include="AES.cs" />
     <Compile Include="changeData.cs">
       <SubType>Form</SubType>

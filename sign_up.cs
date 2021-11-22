@@ -81,13 +81,7 @@ namespace on_off_proj
                     {
                         mySqlInsertCommand.ExecuteNonQuery();
 
-                        string createQuery = "CREATE TABLE Friend" + textBox_sign_up_ID.Text + 
-                                        "(id Integer unsigned NOT NULL AUTO_INCREMENT, " +
-                                        "FID VARCHAR(45) NOT NULL, " +
-                                        "PRIMARY KEY (id))";
-
-                        MySqlCommand mySqlFriendCommand = new MySqlCommand(createQuery, connection);
-                        mySqlFriendCommand.ExecuteNonQuery();
+                        add_friend.create_table(textBox_sign_up_ID.Text);
                     }
                     else return;
 
@@ -98,7 +92,7 @@ namespace on_off_proj
                 }
 
             }
-
+            this.Close();
         }
 
 
