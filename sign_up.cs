@@ -92,7 +92,7 @@ namespace on_off_proj
                 }
 
             }
-
+            this.Close();
         }
 
 

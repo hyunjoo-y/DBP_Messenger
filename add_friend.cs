@@ -22,7 +22,7 @@ namespace on_off_proj
                 try//예외 처리
                 {
 
-                    string createQuery = "CREATE TABLE Friend" + ID_text +
+                    string createQuery = "CREATE TABLE Friend_" + ID_text +
                                         "(id Integer unsigned NOT NULL AUTO_INCREMENT, " +
                                         "FID VARCHAR(45) NOT NULL, " +
                                         "PRIMARY KEY (id))";
@@ -37,5 +37,9 @@ namespace on_off_proj
                 }
             }
         }
+
+
+
+
     }
 }
