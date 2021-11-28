@@ -121,11 +121,23 @@
   <data name="ID_Pass5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ID_Pass5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imoji6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imoji\imoji6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imoji5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imoji\imoji5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="onofff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\onofff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imoji2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imoji\imoji2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="온오프프" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\온오프프.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imoji3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imoji\imoji3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="온오프프1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\온오프프1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,11 +157,17 @@
   <data name="onoff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\onoff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imoji1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imoji\imoji1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imoji4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imoji\imoji4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ID_Pass6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ID_Pass6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ID_Pass4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ID_Pass4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="사진" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\사진.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +175,7 @@
   <data name="유튜브_기본프로필_하늘색" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\유튜브_기본프로필_하늘색.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
