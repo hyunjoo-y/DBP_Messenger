@@ -75,6 +75,13 @@ namespace on_off_proj
         public void setUp()
         {
             string checkbox_checked = "";
+            try
+            {
+                BinaryReader br = new BinaryReader(new FileStream("setting.txt", FileMode.OpenOrCreate));
+                br.Close();
+            }
+            catch (Exception e) { }
+
             using (StreamReader file_read = new StreamReader("setting.txt"))
             {
                 checkbox_checked = file_read.ReadLine();
