@@ -144,5 +144,14 @@ namespace on_off_proj
             createFriendItems();
             search_friend();
         }
+
+        private void pictureBox_addsearch_Click(object sender, EventArgs e)
+        {
+            string userid = "User1";
+            string friendid = textBoxSearchFriend.Text;
+            SearchFriend search = new SearchFriend(friendid);
+
+            search.Show();
+        }
     }
 }

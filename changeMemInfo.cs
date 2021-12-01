@@ -5,13 +5,12 @@ namespace on_off_proj
 {
     public partial class changeMemInfo : Form
     {
-        public string login_id { get; set; }
+        string userid = connection.userId;
         public string login_pw { get; set; }
 
         public changeMemInfo(string login_id, string login_pw)
         {
             InitializeComponent();
-            this.login_id = login_id;
             this.login_pw = login_pw;
             SetForm();
         }
@@ -26,7 +25,7 @@ namespace on_off_proj
                 try
                 {
                     conn.Open();
-                    string query = "SELECT * FROM SNS WHERE USERID='" + login_id + "'";
+                    string query = "SELECT * FROM SNS WHERE USERID='" + userid + "'";
                     MySqlCommand cmd = new MySqlCommand(query, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     while (rdr.Read())

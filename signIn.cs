@@ -17,9 +17,9 @@ namespace on_off_proj
         private void button_login_Click(object sender, EventArgs e)
         {   
 
-            using (MySqlConnection connection = new MySqlConnection(myConnection))
+            using (MySqlConnection connect = new MySqlConnection(myConnection))
             {
-                connection.Open();
+                connect.Open();
                 
                 string login_id = textBox_id.Text;
                 string login_pw = textBox_pw.Text;
@@ -27,7 +27,7 @@ namespace on_off_proj
                 DBManager.GetInstance().setUserId(login_id);
 
                 string query = "SELECT * FROM on_off WHERE ID = '"+login_id+"'"; //아이디 기준으로 데이터를 가져옴
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(query, connect);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 bool login = false;
@@ -59,10 +59,12 @@ namespace on_off_proj
                         writer.Close();
                     }
 
+                    connection.userId = login_id;
+
                     MessageBox.Show("LOGIN SUCCESS");
                     this.Visible = false;
-                    chattingList chat = new chattingList();
-                    chat.ShowDialog();
+                    FriendList test = new FriendList();
+                    test.ShowDialog();
                     
                 }
                 else

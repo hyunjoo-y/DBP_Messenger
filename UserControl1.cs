@@ -43,27 +43,17 @@ namespace on_off_proj
         }
 
         [Category("Custom Props")]
-        
+
 
         public Image Icon
         {
             get { return _icon; }
-            set { _icon = value;
+            set
+            {
+                _icon = value;
                 roundPictureBox1.Image = value;
             }
         }
         #endregion
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // UserControl1
-            // 
-            this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(374, 195);
-            this.ResumeLayout(false);
-
-        }
     }
 }

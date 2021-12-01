@@ -99,6 +99,12 @@
       <DependentUpon>address.cs</DependentUpon>
     </Compile>
     <Compile Include="AES.cs" />
+    <Compile Include="bgcForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bgcForm.Designer.cs">
+      <DependentUpon>bgcForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="changeData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,7 +133,26 @@
     <Compile Include="ClientData.cs" />
     <Compile Include="connection.cs" />
     <Compile Include="DBManager.cs" />
+    <Compile Include="SearchFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchFriend.Designer.cs">
+      <DependentUpon>SearchFriend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FriendList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FriendList.Designer.cs">
+      <DependentUpon>FriendList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FriendManagement.cs" />
     <Compile Include="imageBt.cs" />
+    <Compile Include="imForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="imForm.Designer.cs">
+      <DependentUpon>imForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="RoundPictureBox.cs">
       <SubType>Component</SubType>
@@ -147,8 +172,26 @@
     <Compile Include="sign_up.Designer.cs">
       <DependentUpon>sign_up.cs</DependentUpon>
     </Compile>
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SearchFriend.resx">
+      <DependentUpon>SearchFriend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="address.resx">
       <DependentUpon>address.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bgcForm.resx">
+      <DependentUpon>bgcForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="changeData.resx">
       <DependentUpon>changeData.cs</DependentUpon>
@@ -161,6 +204,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="chatWindow.resx">
       <DependentUpon>chatWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FriendList.resx">
+      <DependentUpon>FriendList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imForm.resx">
+      <DependentUpon>imForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -177,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sign_up.resx">
       <DependentUpon>sign_up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".vs\DBP-Messenger\v16\.suo" />
     <None Include=".vs\DBP_Messenger\v16\.suo" />
@@ -407,7 +459,14 @@
     <Content Include="packages\System.Runtime.CompilerServices.Unsafe.5.0.0\version.txt" />
     <Content Include="packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.dll" />
     <Content Include="packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.xml" />
+    <Content Include="Resources\imoji\imoji1.png" />
+    <Content Include="Resources\imoji\imoji2.png" />
+    <Content Include="Resources\imoji\imoji3.png" />
+    <Content Include="Resources\imoji\imoji4.png" />
+    <Content Include="Resources\imoji\imoji5.png" />
+    <Content Include="Resources\imoji\imoji6.png" />
     <Content Include="Resources\profile.jpg" />
+    <Content Include="Resources\search_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".vs\DBP_Messenger-main\v16\" />
