@@ -17,9 +17,9 @@ namespace on_off_proj
         private void button_login_Click(object sender, EventArgs e)
         {   
 
-            using (MySqlConnection connect = new MySqlConnection(myConnection))
+            using (MySqlConnection connection = new MySqlConnection(myConnection))
             {
-                connect.Open();
+                connection.Open();
                 
                 string login_id = textBox_id.Text;
                 string login_pw = textBox_pw.Text;
@@ -27,7 +27,7 @@ namespace on_off_proj
                 DBManager.GetInstance().setUserId(login_id);
 
                 string query = "SELECT * FROM on_off WHERE ID = '"+login_id+"'"; //아이디 기준으로 데이터를 가져옴
-                MySqlCommand cmd = new MySqlCommand(query, connect);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
                 bool login = false;
@@ -59,12 +59,10 @@ namespace on_off_proj
                         writer.Close();
                     }
 
-                    connection.userId = login_id;
-
                     MessageBox.Show("LOGIN SUCCESS");
                     this.Visible = false;
-                    FriendList test = new FriendList();
-                    test.ShowDialog();
+                    FriendList list = new FriendList(login_id);
+                    list.ShowDialog();
                     
                 }
                 else
@@ -77,13 +75,6 @@ namespace on_off_proj
         public void setUp()
         {
             string checkbox_checked = "";
-            try
-            {
-                BinaryReader br = new BinaryReader(new FileStream("setting.txt", FileMode.OpenOrCreate));
-                br.Close();
-            }
-            catch (Exception e) { }
-
             using (StreamReader file_read = new StreamReader("setting.txt"))
             {
                 checkbox_checked = file_read.ReadLine();

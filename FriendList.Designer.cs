@@ -35,9 +35,11 @@ namespace on_off_proj
             this.textBoxSearchFriend = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBoxClick = new System.Windows.Forms.PictureBox();
-            this.pictureBox_addsearch = new System.Windows.Forms.PictureBox();
+            this.button_chat = new System.Windows.Forms.Button();
+            this.button_addFriend = new System.Windows.Forms.Button();
+            this.button_ = new System.Windows.Forms.Button();
+            this.roundedButton1 = new on_off_proj.RoundedButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClick)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_addsearch)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -73,7 +75,7 @@ namespace on_off_proj
             this.textBoxSearchFriend.Location = new System.Drawing.Point(18, 142);
             this.textBoxSearchFriend.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSearchFriend.Name = "textBoxSearchFriend";
-            this.textBoxSearchFriend.Size = new System.Drawing.Size(223, 25);
+            this.textBoxSearchFriend.Size = new System.Drawing.Size(270, 25);
             this.textBoxSearchFriend.TabIndex = 4;
             this.textBoxSearchFriend.TextChanged += new System.EventHandler(this.pictureBoxClick_Click);
             // 
@@ -90,7 +92,7 @@ namespace on_off_proj
             // pictureBoxClick
             // 
             this.pictureBoxClick.Image = global::on_off_proj.Properties.Resources.search_icon;
-            this.pictureBoxClick.Location = new System.Drawing.Point(259, 136);
+            this.pictureBoxClick.Location = new System.Drawing.Point(304, 138);
             this.pictureBoxClick.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBoxClick.Name = "pictureBoxClick";
             this.pictureBoxClick.Size = new System.Drawing.Size(38, 35);
@@ -99,17 +101,43 @@ namespace on_off_proj
             this.pictureBoxClick.TabStop = false;
             this.pictureBoxClick.Click += new System.EventHandler(this.pictureBoxClick_Click);
             // 
-            // pictureBox_addsearch
+            // button_chat
             // 
-            this.pictureBox_addsearch.Image = global::on_off_proj.Properties.Resources.search_icon;
-            this.pictureBox_addsearch.Location = new System.Drawing.Point(306, 136);
-            this.pictureBox_addsearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox_addsearch.Name = "pictureBox_addsearch";
-            this.pictureBox_addsearch.Size = new System.Drawing.Size(38, 35);
-            this.pictureBox_addsearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_addsearch.TabIndex = 10;
-            this.pictureBox_addsearch.TabStop = false;
-            this.pictureBox_addsearch.Click += new System.EventHandler(this.pictureBox_addsearch_Click);
+            this.button_chat.Location = new System.Drawing.Point(12, 12);
+            this.button_chat.Name = "button_chat";
+            this.button_chat.Size = new System.Drawing.Size(75, 23);
+            this.button_chat.TabIndex = 10;
+            this.button_chat.Text = "채팅";
+            this.button_chat.UseVisualStyleBackColor = true;
+            this.button_chat.Click += new System.EventHandler(this.button_chat_Click);
+            // 
+            // button_addFriend
+            // 
+            this.button_addFriend.Location = new System.Drawing.Point(108, 12);
+            this.button_addFriend.Name = "button_addFriend";
+            this.button_addFriend.Size = new System.Drawing.Size(75, 23);
+            this.button_addFriend.TabIndex = 11;
+            this.button_addFriend.Text = "친구추가";
+            this.button_addFriend.UseVisualStyleBackColor = true;
+            this.button_addFriend.Click += new System.EventHandler(this.button_addFriend_Click);
+            // 
+            // button_
+            // 
+            this.button_.Location = new System.Drawing.Point(213, 12);
+            this.button_.Name = "button_";
+            this.button_.Size = new System.Drawing.Size(75, 23);
+            this.button_.TabIndex = 13;
+            this.button_.Text = "추천친구";
+            this.button_.UseVisualStyleBackColor = true;
+            // 
+            // roundedButton1
+            // 
+            this.roundedButton1.Location = new System.Drawing.Point(149, 29);
+            this.roundedButton1.Name = "roundedButton1";
+            this.roundedButton1.Size = new System.Drawing.Size(8, 8);
+            this.roundedButton1.TabIndex = 12;
+            this.roundedButton1.Text = "roundedButton1";
+            this.roundedButton1.UseVisualStyleBackColor = true;
             // 
             // FriendList
             // 
@@ -117,7 +145,10 @@ namespace on_off_proj
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(431, 650);
-            this.Controls.Add(this.pictureBox_addsearch);
+            this.Controls.Add(this.button_);
+            this.Controls.Add(this.roundedButton1);
+            this.Controls.Add(this.button_addFriend);
+            this.Controls.Add(this.button_chat);
             this.Controls.Add(this.pictureBoxClick);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxSearchFriend);
@@ -128,9 +159,9 @@ namespace on_off_proj
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FriendList";
             this.Text = "FriendList";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FriendList_FormClosed);
             this.Load += new System.EventHandler(this.FriendList_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClick)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_addsearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +174,9 @@ namespace on_off_proj
         private System.Windows.Forms.TextBox textBoxSearchFriend;
         private System.Windows.Forms.PictureBox pictureBoxClick;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox_addsearch;
+        private System.Windows.Forms.Button button_chat;
+        private System.Windows.Forms.Button button_addFriend;
+        private RoundedButton roundedButton1;
+        private System.Windows.Forms.Button button_;
     }
 }
